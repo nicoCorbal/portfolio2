@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "title": "Nicolás Corbal — Design Engineer",
+    "description": "Design Engineer. Creo productos digitales donde el diseño y el código se encuentran."
+  },
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Design Engineer — Creo productos digitales donde el <design>diseño</design> y el <code>código</code> se encuentran.",
+    "design": "diseño",
+    "code": "código",
+    "basedIn": "Based in",
+    "location": "Santiago de Compostela",
+    "coordinates": "42.8782° N, 8.5448° W",
+    "available": "Available",
+    "openFor": "Open for <projects>projects</projects>",
+    "projects": "projects",
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "watermark": "Work",
+    "professional": "Professional Work",
+    "professionalSubtitle": "Proyectos donde <highlight>colaboré</highlight> con equipos y clientes.",
+    "professionalHighlight": "colaboré",
+    "personal": "Personal Projects",
+    "personalSubtitle": "Experimentos y proyectos propios donde <highlight>exploro ideas</highlight>.",
+    "personalHighlight": "exploro ideas"
+  },
+  "about": {
+    "title": "About",
+    "headline": "Design Engineer en <company>OSIX</company>. Creo productos donde el diseño y el código se encuentran.",
+    "story": {
+      "p1": "Siempre me atrajo este mundo. Desde pequeño trasteando con ordenadores hasta hoy, construyendo productos digitales. En <year>2022</year> empecé Ingeniería Informática en la USC, y tres años después cofundé <company>OSIX</company> junto a seis compañeros de carrera.",
+      "p2": "OSIX es una empresa de desarrollo donde hacemos de todo: webs, apps, consultoría técnica... lo que el cliente necesite. Mi rol es <role>frontend y diseño de producto</role>. Llevo 6 meses dedicándome a esto a tiempo completo, y el objetivo es claro: hacer crecer la empresa.",
+      "p3": "Me inspiran los estudios creativos que cuidan cada detalle — Basement, Studiofreight, Active Theory. Ese nivel de <craft>craft</craft> es lo que persigo. Soy detallista, experimentador y me gusta trabajar en equipo. Aprendo rápido y me adapto a cualquier stack."
+    },
+    "role": "frontend y diseño de producto",
+    "craft": "craft",
+    "defines": "Lo que me define",
+    "differentiators": {
+      "bridge": "Puente entre diseño y código",
+      "detail": "Obsesión por el detalle",
+      "learn": "Aprendo rápido",
+      "product": "Visión de producto"
+    },
+    "stack": "Stack",
+    "values": "Lo que valoro",
+    "valuesList": {
+      "freedom": {
+        "title": "Libertad creativa",
+        "description": "Espacio para proponer y experimentar"
+      },
+      "team": {
+        "title": "Buen equipo",
+        "description": "Gente con la que mola trabajar"
+      },
+      "impact": {
+        "title": "Impacto real",
+        "description": "Proyectos que sirven para algo"
+      }
+    },
+    "currently": "Actualmente",
+    "education": "Formación",
+    "educationValue": "USC — Ing. Informática",
+    "locationLabel": "Ubicación",
+    "locationValue": "Santiago de Compostela",
+    "easterEgg": {
+      "hint": "psst... escribe",
+      "key": "play",
+      "surprise": "para una sorpresa",
+      "mobileText": "un juego"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "headline": "¿Tienes un proyecto en mente?",
+    "description": "Siempre estoy abierto a nuevas oportunidades y colaboraciones. Si tienes una idea o proyecto, no dudes en escribirme.",
+    "email": "Email",
+    "social": "Social",
+    "footer": {
+      "location": "Santiago de Compostela, España",
+      "copyright": "© {year} Nicolás Corbal"
+    }
+  },
+  "projectDetail": {
+    "back": "Volver",
+    "year": "Año",
+    "type": "Tipo",
+    "category": "Categoría",
+    "stack": "Stack",
+    "caseStudy": {
+      "title": "Case Study",
+      "problem": "El Problema",
+      "process": "El Proceso",
+      "solution": "La Solución",
+      "results": "Resultados"
+    },
+    "learnings": "Aprendizajes",
+    "features": "Features",
+    "technical": "Technical",
+    "architecture": "Arquitectura",
+    "highlights": "Highlights",
+    "challenges": "Retos & Soluciones",
+    "challenge": "Reto",
+    "solution": "Solución",
+    "technologies": "Tecnologías",
+    "gallery": "Galería",
+    "how": "Cómo",
+    "nav": {
+      "prev": "← Anterior",
+      "next": "Siguiente →",
+      "all": "Todos los proyectos",
+      "viewMore": "Ver más →"
+    },
+    "buttons": {
+      "viewProject": "Ver proyecto",
+      "github": "GitHub"
+    }
+  },
+  "game": {
+    "title": "type.",
+    "instructions": "Escribe las palabras antes de que desaparezcan",
+    "best": "Mejor",
+    "play": "Jugar",
+    "close": "Esc para cerrar",
+    "word": "palabra",
+    "words": "palabras",
+    "newRecord": "¡Nuevo récord!",
+    "again": "Otra vez",
+    "esc": "Esc"
+  },
+  "preloader": {
+    "loading": "Cargando"
+  }
+}

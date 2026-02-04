@@ -1,0 +1,298 @@
+[
+  {
+    "id": "osix-web",
+    "title": "OSIX Web",
+    "year": "2024",
+    "type": "Corporate Website",
+    "category": "professional",
+    "description": "Design and development of OSIX corporate website with animations, dark mode and SEO optimization.",
+    "longDescription": "Corporate website for our development company. Design from scratch, animations with Framer Motion, light/dark theme system, and optimization for SEO and performance.",
+    "features": ["Dark Mode", "Animations", "SEO", "Responsive", "Contact Form"],
+    "tech": ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
+    "icon": "/projects/osix-icon.svg",
+    "color": "#6366f1",
+    "link": "https://osix.dev",
+    "metaDescription": "OSIX Web - Corporate website with animations and dark mode"
+  },
+  {
+    "id": "nessie",
+    "title": "Nessie",
+    "year": "2025",
+    "type": "Frontend Development",
+    "category": "professional",
+    "description": "Complete frontend development of a multi-tenant B2B platform with React, permissions system and admin panel.",
+    "longDescription": "Responsible for the frontend development of Nessie, a B2B enterprise application. I implemented the complete interface: passwordless authentication system, organization and user management, super admin panel, and all application views.",
+    "caseStudy": {
+      "problem": "The platform needed an interface that handled the complexity of a multi-tenant system with roles, hierarchical permissions and multiple user types, while maintaining a clear and efficient UX.",
+      "process": "I worked closely with the backend team to design user flows. I implemented reusable components and a state system that reflected the backend's organizational hierarchy.",
+      "solution": "A modular frontend with React and Vite that consumes the REST API. State management for sessions, permissions and organization context. Responsive UI with Tailwind.",
+      "results": "Frontend in production supporting multiple organizations with interfaces adapted according to user role."
+    },
+    "learnings": [
+      "Implemented passwordless authentication flows with magic links in the frontend",
+      "Learned to handle permissions and roles in the UI, showing/hiding features based on context",
+      "Developed complex components for managing organizational hierarchies",
+      "Improved at consuming REST APIs with token handling and automatic refresh"
+    ],
+    "technical": {
+      "architecture": "SPA with React 19 and Vite. Routing with React Router v7. Local state with hooks. Backend communication via fetch with auth interceptors. Styled with Tailwind CSS.",
+      "highlights": [
+        {
+          "title": "Authentication System",
+          "description": "Complete passwordless login flow: email input, waiting screen, magic link validation, and session handling with JWT."
+        },
+        {
+          "title": "Super Admin Panel",
+          "description": "Complete dashboard for managing organizations, users and configuration. Tables with filters, pagination and batch actions."
+        },
+        {
+          "title": "UI Permissions Management",
+          "description": "System that hides/shows elements based on user role. Route and component protection based on permissions."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Displaying different interfaces based on user role without duplicating code.",
+          "solution": "HOCs and custom hooks that verify permissions. Components that receive user context and render conditionally."
+        },
+        {
+          "challenge": "Handling the hierarchy of organizational units in the UI intuitively.",
+          "solution": "Expandable/collapsible tree component with drag & drop. Dynamic breadcrumbs for navigation."
+        },
+        {
+          "challenge": "Keeping the session synchronized and handling token expiration.",
+          "solution": "Fetch interceptor that detects 401, attempts token refresh, and redirects to login if it fails."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Passwordless Login",
+        "description": "Password-free authentication flow. The user enters their email and receives a magic link.",
+        "how": "Email form, API call, waiting screen with instructions, and callback handler that validates the token and establishes the session."
+      },
+      {
+        "name": "Organization Dashboard",
+        "description": "Main view with metrics, recent activity and quick access. Adapted according to user role.",
+        "how": "Card and chart components. Data obtained from multiple endpoints and aggregated in the frontend."
+      },
+      {
+        "name": "User Management",
+        "description": "Complete CRUD of users with email invitation, role assignment and status management (active/inactive).",
+        "how": "Table with search, filters and pagination. Modals for create/edit. Confirmation for destructive actions."
+      },
+      {
+        "name": "Organizational Units Tree",
+        "description": "Visualization and management of the hierarchy of departments, teams and projects.",
+        "how": "Recursive tree component. Expand/collapse, create children, edit and delete nodes. Optimistic updates."
+      },
+      {
+        "name": "Super Admin Panel",
+        "description": "Exclusive interface for super admins. Management of all organizations, limits and global configuration.",
+        "how": "Protected routes with is_super_admin verification. List and detail views for organizations."
+      },
+      {
+        "name": "Notification System",
+        "description": "Toasts and alerts for action feedback. API error notifications with clear messages.",
+        "how": "Notification context with queue. Toast component with auto-dismiss and variants (success, error, warning)."
+      }
+    ],
+    "features": ["Passwordless Auth", "User Management", "Org Hierarchy", "Role-based UI", "Super Admin Panel", "Responsive"],
+    "tech": ["React", "Vite", "React Router", "Tailwind", "TypeScript"],
+    "icon": "/projects/nessie-icon.svg",
+    "color": "#FF4D00",
+    "metaDescription": "Nessie - Multi-tenant B2B platform with hexagonal architecture"
+  },
+  {
+    "id": "denso",
+    "title": "Denso",
+    "year": "2025",
+    "type": "Productivity",
+    "category": "personal",
+    "description": "Minimalist study timer with Pomodoro, statistics and achievement system.",
+    "longDescription": "Productivity app designed for students. Customizable Pomodoro timer, study statistics with heatmap, achievement system, task management by subject and 8 visual themes. PWA with offline support.",
+    "caseStudy": {
+      "problem": "Existing productivity apps are overloaded with unnecessary features. Students need something simple that works without friction and actually helps them stay focused.",
+      "process": "I started by researching the Pomodoro technique and talking to students about their habits. I iterated the design multiple times until I achieved an interface that disappears while you study.",
+      "solution": "A minimalist PWA that focuses on the essentials: timer, visual statistics to see your progress, and an achievement system that gamifies studying without being intrusive.",
+      "results": "The app is actively used by students, with study sessions averaging 2+ hours per user."
+    },
+    "learnings": [
+      "Learned to design for 'non-use' — the best interface is one that disappears when you don't need it",
+      "Discovered the power of subtle gamification: achievements work better when they don't interrupt",
+      "Understood how to structure complex local state with offline persistence",
+      "Improved my understanding of performant animations in React"
+    ],
+    "technical": {
+      "architecture": "SPA with React and Vite. Global state with Zustand persisted in localStorage. Service Worker for complete offline functionality. CSS custom properties for the theme system.",
+      "highlights": [
+        {
+          "title": "Dynamic Theme System",
+          "description": "8 visual themes implemented with CSS custom properties. Theme change is instant without re-render because colors are defined in :root and components inherit them."
+        },
+        {
+          "title": "Activity Heatmap",
+          "description": "GitHub-style visualization of study history. Calculated in real-time from stored session data, with color interpolation based on intensity."
+        },
+        {
+          "title": "Offline-First PWA",
+          "description": "Service Worker that caches all assets. The app works 100% offline — you can study on the subway without data."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "The timer needed to keep running even if the user switched tabs or locked their phone.",
+          "solution": "Using timestamps instead of intervals. When returning to the app, I calculate elapsed time by comparing Date.now() with the start timestamp."
+        },
+        {
+          "challenge": "Timer animations caused jank on low-end mobile devices.",
+          "solution": "Optimized using will-change and transform instead of width/height. The progress circle uses CSS-animated stroke-dasharray."
+        },
+        {
+          "challenge": "Synchronizing state between browser tabs.",
+          "solution": "Implemented a storage events listener that updates Zustand when it detects changes in localStorage from another tab."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Pomodoro Timer",
+        "description": "Configurable timer with work and break sessions. System notifications when each phase ends.",
+        "how": "Timestamp-based for precision. Uses the Notifications API for alerts. The progress circle is an SVG with animated stroke-dasharray."
+      },
+      {
+        "name": "Statistics",
+        "description": "Dashboard with total study time, current streak, best streak, and monthly activity heatmap.",
+        "how": "Data is aggregated in real-time from the sessions array. The heatmap uses a CSS grid with interpolated colors based on each day's study intensity."
+      },
+      {
+        "name": "Achievement System",
+        "description": "25+ unlockable achievements based on study time, streaks, and feature usage. Subtle notifications when unlocking.",
+        "how": "Each achievement has conditions defined as functions. A hook checks conditions after each session and triggers notification if a new one is met."
+      },
+      {
+        "name": "Task Management",
+        "description": "Task list by subject. You can mark which task you're working on during a Pomodoro session.",
+        "how": "Simple CRUD with Zustand. Tasks are grouped by subject and can be filtered. The active task is associated with the session for statistics."
+      },
+      {
+        "name": "8 Visual Themes",
+        "description": "Color themes ranging from neutral to vibrant. The theme persists between sessions.",
+        "how": "CSS custom properties in :root. Theme change updates variables and the entire UI updates instantly without component re-render."
+      },
+      {
+        "name": "PWA",
+        "description": "Installable on mobile and desktop. Works completely offline.",
+        "how": "Vite PWA plugin generates the Service Worker. Cache-first strategy for static assets. Manifest.json for installation."
+      }
+    ],
+    "features": ["Pomodoro Timer", "Statistics", "Achievements", "To-dos", "8 Themes", "PWA"],
+    "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Zustand", "PWA"],
+    "icon": "/projects/denso-icon.svg",
+    "heroImage": "/projects/densos.png",
+    "color": "#1d1d1b",
+    "link": "https://denso.study",
+    "metaDescription": "Denso - Minimalist study timer with Pomodoro and statistics"
+  },
+  {
+    "id": "gestalt",
+    "title": "Gestalt",
+    "year": "2025",
+    "type": "E-commerce",
+    "category": "personal",
+    "description": "Catalog platform with curated collections and product comparator.",
+    "longDescription": "Curated product catalog with collection system, integrated blog, product comparator and advanced search. Minimalist design focused on the discovery experience.",
+    "caseStudy": {
+      "problem": "Traditional e-commerce platforms are saturated with information, pop-ups and aggressive CTAs. The user gets lost in a sea of products without context or narrative.",
+      "process": "I studied how physical design stores curate their spaces. I applied the concept of 'collection' as a narrative unit — each collection tells a story and groups products meaningfully.",
+      "solution": "A catalog that prioritizes discovery over immediate conversion. Editorial collections, comparator for informed decisions, and a blog that contextualizes products.",
+      "results": "A more relaxed shopping experience where the user explores instead of being bombarded."
+    },
+    "learnings": [
+      "Understood that less friction doesn't always mean fewer steps — sometimes it means better context",
+      "Learned to design for 'browsing' instead of 'buying' — changed how I think about e-commerce",
+      "Discovered how editorial content can improve the perceived value of a product",
+      "Improved at system design: collections, products, variants, all connected"
+    ],
+    "technical": {
+      "architecture": "SPA with React and Vite. Global state with React Context for cart and wishlist. Product data in static JSON (no backend). Client-side search with fuzzy matching.",
+      "highlights": [
+        {
+          "title": "Collections System",
+          "description": "Each collection is an entity with its own page, editorial description, and associated products. Collections can overlap — a product can be in multiple collections."
+        },
+        {
+          "title": "Product Comparator",
+          "description": "Select up to 3 products and compare them side by side. Specs align automatically and differences are visually highlighted."
+        },
+        {
+          "title": "Fuzzy Search",
+          "description": "Typo-tolerant search using Fuse.js. Searches name, description, category and tags simultaneously with relevance ranking."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "The comparator needed to handle products with very different specs (some have 'material', others 'capacity', etc).",
+          "solution": "Normalized specs into common categories and showed only relevant ones for each comparison. Unique specs appear in an 'Other' section."
+        },
+        {
+          "challenge": "Product images had very different sizes and ratios, breaking the grid.",
+          "solution": "Used object-fit: cover with fixed aspect-ratio. For detail view, implemented a lightbox that shows the full image without cropping."
+        },
+        {
+          "challenge": "Wishlist needed to persist between sessions without a backend.",
+          "solution": "localStorage with a custom hook that syncs React state with storage. Includes version migration in case I change the structure."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Collections",
+        "description": "Editorial groupings of products with their own narrative. Each collection has a dedicated page with description, hero image and product grid.",
+        "how": "Many-to-many relationship between products and collections. Each collection has its own metadata (title, description, image, product order)."
+      },
+      {
+        "name": "Blog",
+        "description": "Articles that contextualize products — buying guides, brand stories, trends. Integrated with the catalog to link mentioned products.",
+        "how": "Markdown with frontmatter for metadata. Products are referenced by ID and rendered as inline cards in the article."
+      },
+      {
+        "name": "Comparator",
+        "description": "Tool to compare up to 3 products side by side. Shows aligned specs, highlighted differences and allows adding to cart from comparison.",
+        "how": "Global state for products in comparison. Algorithm that finds common specs and groups them. Visual highlight for different values."
+      },
+      {
+        "name": "Search",
+        "description": "Instant search with suggestions as you type. Typo-tolerant and searches multiple fields.",
+        "how": "Fuse.js for client-side fuzzy search. 150ms debounce to avoid saturation. Results ranked by relevance with match highlighting."
+      },
+      {
+        "name": "Wishlist",
+        "description": "List of saved products that persists between sessions. Accessible from any page with counter in header.",
+        "how": "Context + localStorage. useWishlist hook that exposes add/remove/toggle/isInWishlist. Automatic sync with storage."
+      }
+    ],
+    "features": ["Collections", "Blog", "Product Comparator", "Search", "Wishlist"],
+    "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Fuse.js"],
+    "icon": "/projects/gestalt-icon.svg",
+    "heroImage": "/projects/gestalts.png",
+    "color": "#0a0a0a",
+    "link": "https://gestalt-ten.vercel.app",
+    "metaDescription": "Gestalt - Catalog platform with curated collections"
+  },
+  {
+    "id": "paleta",
+    "title": "Paleta",
+    "year": "2024",
+    "type": "Design Tool",
+    "category": "personal",
+    "description": "AI-powered color palette generator with multiple export formats and UI mockup visualization.",
+    "longDescription": "A tool for designers that generates harmonious color palettes. Includes AI generation, manual adjustments, export to CSS/Tailwind/Figma, and UI mockup previews.",
+    "features": ["AI Generation", "Export Formats", "UI Mockups", "Color Harmony", "Accessibility Check"],
+    "tech": ["React", "OpenAI API", "Tailwind", "TypeScript"],
+    "icon": "/projects/paleta-icon.svg",
+    "color": "#ec4899",
+    "link": "https://paleta.design",
+    "metaDescription": "Paleta - AI-powered color palette generator"
+  }
+]

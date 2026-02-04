@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "title": "Nicolás Corbal — Design Engineer",
+    "description": "Design Engineer. I build digital products where design and code meet."
+  },
+  "nav": {
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Design Engineer — I build digital products where <design>design</design> and <code>code</code> meet.",
+    "design": "design",
+    "code": "code",
+    "basedIn": "Based in",
+    "location": "Santiago de Compostela",
+    "coordinates": "42.8782° N, 8.5448° W",
+    "available": "Available",
+    "openFor": "Open for <projects>projects</projects>",
+    "projects": "projects",
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "watermark": "Work",
+    "professional": "Professional Work",
+    "professionalSubtitle": "Projects where I <highlight>collaborated</highlight> with teams and clients.",
+    "professionalHighlight": "collaborated",
+    "personal": "Personal Projects",
+    "personalSubtitle": "Experiments and personal projects where I <highlight>explore ideas</highlight>.",
+    "personalHighlight": "explore ideas"
+  },
+  "about": {
+    "title": "About",
+    "headline": "Design Engineer at <company>OSIX</company>. I build products where design and code meet.",
+    "story": {
+      "p1": "I've always been drawn to this world. From tinkering with computers as a kid to building digital products today. In <year>2022</year> I started Computer Engineering at USC, and three years later co-founded <company>OSIX</company> with six classmates.",
+      "p2": "OSIX is a development company where we do it all: websites, apps, technical consulting... whatever the client needs. My role is <role>frontend and product design</role>. I've been doing this full-time for 6 months, and the goal is clear: grow the company.",
+      "p3": "I'm inspired by creative studios that care about every detail — Basement, Studiofreight, Active Theory. That level of <craft>craft</craft> is what I pursue. I'm detail-oriented, an experimenter, and I love working in teams. I learn fast and adapt to any stack."
+    },
+    "role": "frontend and product design",
+    "craft": "craft",
+    "defines": "What defines me",
+    "differentiators": {
+      "bridge": "Bridge between design and code",
+      "detail": "Obsession with detail",
+      "learn": "Fast learner",
+      "product": "Product vision"
+    },
+    "stack": "Stack",
+    "values": "What I value",
+    "valuesList": {
+      "freedom": {
+        "title": "Creative freedom",
+        "description": "Space to propose and experiment"
+      },
+      "team": {
+        "title": "Great team",
+        "description": "People you enjoy working with"
+      },
+      "impact": {
+        "title": "Real impact",
+        "description": "Projects that make a difference"
+      }
+    },
+    "currently": "Currently",
+    "education": "Education",
+    "educationValue": "USC — Computer Engineering",
+    "locationLabel": "Location",
+    "locationValue": "Santiago de Compostela",
+    "easterEgg": {
+      "hint": "psst... type",
+      "key": "play",
+      "surprise": "for a surprise",
+      "mobileText": "a game"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "headline": "Have a project in mind?",
+    "description": "I'm always open to new opportunities and collaborations. If you have an idea or project, don't hesitate to reach out.",
+    "email": "Email",
+    "social": "Social",
+    "footer": {
+      "location": "Santiago de Compostela, Spain",
+      "copyright": "© {year} Nicolás Corbal"
+    }
+  },
+  "projectDetail": {
+    "back": "Back",
+    "year": "Year",
+    "type": "Type",
+    "category": "Category",
+    "stack": "Stack",
+    "caseStudy": {
+      "title": "Case Study",
+      "problem": "The Problem",
+      "process": "The Process",
+      "solution": "The Solution",
+      "results": "Results"
+    },
+    "learnings": "Learnings",
+    "features": "Features",
+    "technical": "Technical",
+    "architecture": "Architecture",
+    "highlights": "Highlights",
+    "challenges": "Challenges & Solutions",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "technologies": "Technologies",
+    "gallery": "Gallery",
+    "how": "How",
+    "nav": {
+      "prev": "← Previous",
+      "next": "Next →",
+      "all": "All projects",
+      "viewMore": "View more →"
+    },
+    "buttons": {
+      "viewProject": "View project",
+      "github": "GitHub"
+    }
+  },
+  "game": {
+    "title": "type.",
+    "instructions": "Type the words before they disappear",
+    "best": "Best",
+    "play": "Play",
+    "close": "Esc to close",
+    "word": "word",
+    "words": "words",
+    "newRecord": "New Record!",
+    "again": "Again",
+    "esc": "Esc"
+  },
+  "preloader": {
+    "loading": "Loading"
+  }
+}

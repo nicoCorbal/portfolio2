@@ -1,0 +1,298 @@
+[
+  {
+    "id": "osix-web",
+    "title": "OSIX Web",
+    "year": "2024",
+    "type": "Web Corporativa",
+    "category": "professional",
+    "description": "Diseño y desarrollo de la web corporativa de OSIX con animaciones, modo oscuro y optimización SEO.",
+    "longDescription": "Web corporativa de nuestra empresa de desarrollo. Diseño desde cero, animaciones con Framer Motion, sistema de temas claro/oscuro, y optimización para SEO y rendimiento.",
+    "features": ["Dark Mode", "Animations", "SEO", "Responsive", "Contact Form"],
+    "tech": ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
+    "icon": "/projects/osix-icon.svg",
+    "color": "#6366f1",
+    "link": "https://osix.dev",
+    "metaDescription": "OSIX Web - Web corporativa con animaciones y modo oscuro"
+  },
+  {
+    "id": "nessie",
+    "title": "Nessie",
+    "year": "2025",
+    "type": "Frontend Development",
+    "category": "professional",
+    "description": "Desarrollo del frontend completo de una plataforma B2B multi-tenant con React, sistema de permisos y panel de administración.",
+    "longDescription": "Responsable del desarrollo frontend de Nessie, una aplicación empresarial B2B. Implementé la interfaz completa: sistema de autenticación passwordless, gestión de organizaciones y usuarios, panel de super admin, y todas las vistas de la aplicación.",
+    "caseStudy": {
+      "problem": "La plataforma necesitaba una interfaz que manejara la complejidad de un sistema multi-tenant con roles, permisos jerárquicos y múltiples tipos de usuario, manteniendo una UX clara y eficiente.",
+      "process": "Trabajé en estrecha colaboración con el equipo de backend para diseñar los flujos de usuario. Implementé componentes reutilizables y un sistema de estado que reflejara la jerarquía organizativa del backend.",
+      "solution": "Un frontend modular con React y Vite que consume la API REST. Manejo de estado para sesiones, permisos y contexto de organización. UI responsive con Tailwind.",
+      "results": "Frontend en producción que soporta múltiples organizaciones con interfaces adaptadas según el rol del usuario."
+    },
+    "learnings": [
+      "Implementé flujos de autenticación passwordless con magic links en el frontend",
+      "Aprendí a manejar permisos y roles en la UI, mostrando/ocultando funcionalidades según el contexto",
+      "Desarrollé componentes complejos para gestión de jerarquías organizativas",
+      "Mejoré en consumo de APIs REST con manejo de tokens y refresh automático"
+    ],
+    "technical": {
+      "architecture": "SPA con React 19 y Vite. Routing con React Router v7. Estado local con hooks. Comunicación con backend vía fetch con interceptores para auth. Estilos con Tailwind CSS.",
+      "highlights": [
+        {
+          "title": "Sistema de Autenticación",
+          "description": "Flujo completo de login passwordless: input de email, pantalla de espera, validación de magic link, y manejo de sesión con JWT."
+        },
+        {
+          "title": "Panel de Super Admin",
+          "description": "Dashboard completo para gestionar organizaciones, usuarios y configuración. Tablas con filtros, paginación y acciones en batch."
+        },
+        {
+          "title": "Gestión de Permisos en UI",
+          "description": "Sistema que oculta/muestra elementos según el rol del usuario. Protección de rutas y componentes basada en permisos."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Mostrar interfaces diferentes según el rol del usuario sin duplicar código.",
+          "solution": "HOCs y hooks personalizados que verifican permisos. Componentes que reciben el contexto de usuario y renderizan condicionalmente."
+        },
+        {
+          "challenge": "Manejar la jerarquía de unidades organizativas en la UI de forma intuitiva.",
+          "solution": "Componente de árbol expandible/colapsable con drag & drop. Breadcrumbs dinámicos para navegación."
+        },
+        {
+          "challenge": "Mantener la sesión sincronizada y manejar expiración de tokens.",
+          "solution": "Interceptor de fetch que detecta 401, intenta refresh del token, y redirige a login si falla."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Login Passwordless",
+        "description": "Flujo de autenticación sin contraseña. El usuario ingresa su email y recibe un magic link.",
+        "how": "Formulario de email, llamada a API, pantalla de espera con instrucciones, y handler de callback que valida el token y establece la sesión."
+      },
+      {
+        "name": "Dashboard de Organización",
+        "description": "Vista principal con métricas, actividad reciente y accesos rápidos. Adaptada según el rol del usuario.",
+        "how": "Componentes de cards y gráficos. Datos obtenidos de múltiples endpoints y agregados en el frontend."
+      },
+      {
+        "name": "Gestión de Usuarios",
+        "description": "CRUD completo de usuarios con invitación por email, asignación de roles y gestión de estado (activo/inactivo).",
+        "how": "Tabla con búsqueda, filtros y paginación. Modales para crear/editar. Confirmación para acciones destructivas."
+      },
+      {
+        "name": "Árbol de Unidades Organizativas",
+        "description": "Visualización y gestión de la jerarquía de departamentos, equipos y proyectos.",
+        "how": "Componente recursivo de árbol. Expand/collapse, crear hijos, editar y eliminar nodos. Actualización optimista."
+      },
+      {
+        "name": "Panel Super Admin",
+        "description": "Interfaz exclusiva para super admins. Gestión de todas las organizaciones, límites y configuración global.",
+        "how": "Rutas protegidas con verificación de is_super_admin. Vistas de lista y detalle para organizaciones."
+      },
+      {
+        "name": "Sistema de Notificaciones",
+        "description": "Toasts y alertas para feedback de acciones. Notificaciones de errores de API con mensajes claros.",
+        "how": "Context de notificaciones con cola. Componente Toast con auto-dismiss y variantes (success, error, warning)."
+      }
+    ],
+    "features": ["Passwordless Auth", "User Management", "Org Hierarchy", "Role-based UI", "Super Admin Panel", "Responsive"],
+    "tech": ["React", "Vite", "React Router", "Tailwind", "TypeScript"],
+    "icon": "/projects/nessie-icon.svg",
+    "color": "#FF4D00",
+    "metaDescription": "Nessie - Plataforma B2B multi-tenant con arquitectura hexagonal"
+  },
+  {
+    "id": "denso",
+    "title": "Denso",
+    "year": "2025",
+    "type": "Productividad",
+    "category": "personal",
+    "description": "Temporizador de estudio minimalista con Pomodoro, estadísticas y sistema de logros.",
+    "longDescription": "App de productividad diseñada para estudiantes. Timer Pomodoro personalizable, estadísticas de estudio con heatmap, sistema de logros, gestión de tareas por asignatura y 8 temas visuales. PWA con soporte offline.",
+    "caseStudy": {
+      "problem": "Las apps de productividad existentes están sobrecargadas de funciones innecesarias. Los estudiantes necesitan algo simple que funcione sin fricción y que realmente les ayude a mantener el foco.",
+      "process": "Empecé investigando la técnica Pomodoro y hablando con estudiantes sobre sus hábitos. Iteré el diseño múltiples veces hasta conseguir una interfaz que desapareciera mientras estudias.",
+      "solution": "Una PWA minimalista que se centra en lo esencial: timer, estadísticas visuales para ver tu progreso, y un sistema de logros que gamifica el estudio sin ser intrusivo.",
+      "results": "La app se usa activamente por estudiantes, con sesiones de estudio que promedian 2+ horas por usuario."
+    },
+    "learnings": [
+      "Aprendí a diseñar para el 'no-uso' — la mejor interfaz es la que desaparece cuando no la necesitas",
+      "Descubrí el poder de la gamificación sutil: los logros funcionan mejor cuando no interrumpen",
+      "Entendí cómo estructurar estado local complejo con persistencia offline",
+      "Mejoré mi comprensión de animaciones performantes en React"
+    ],
+    "technical": {
+      "architecture": "SPA con React y Vite. Estado global con Zustand persistido en localStorage. Service Worker para funcionamiento offline completo. CSS custom properties para el sistema de temas.",
+      "highlights": [
+        {
+          "title": "Sistema de Temas Dinámico",
+          "description": "8 temas visuales implementados con CSS custom properties. El cambio de tema es instantáneo sin re-render gracias a que los colores se definen en :root y los componentes los heredan."
+        },
+        {
+          "title": "Heatmap de Actividad",
+          "description": "Visualización tipo GitHub del historial de estudio. Calculado en tiempo real desde los datos de sesiones almacenados, con interpolación de colores según intensidad."
+        },
+        {
+          "title": "PWA Offline-First",
+          "description": "Service Worker que cachea todos los assets. La app funciona 100% sin conexión — puedes estudiar en el metro sin datos."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "El timer debía seguir funcionando aunque el usuario cambiara de pestaña o bloqueara el móvil.",
+          "solution": "Uso de timestamps en lugar de intervalos. Al volver a la app, calculo el tiempo transcurrido comparando Date.now() con el timestamp de inicio."
+        },
+        {
+          "challenge": "Las animaciones del timer causaban jank en móviles de gama baja.",
+          "solution": "Optimicé usando will-change y transform en lugar de width/height. El círculo de progreso usa stroke-dasharray animado con CSS."
+        },
+        {
+          "challenge": "Sincronizar el estado entre pestañas del navegador.",
+          "solution": "Implementé un listener de storage events que actualiza Zustand cuando detecta cambios en localStorage desde otra pestaña."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Timer Pomodoro",
+        "description": "Temporizador configurable con sesiones de trabajo y descanso. Notificaciones de sistema cuando termina cada fase.",
+        "how": "Basado en timestamps para precisión. Usa la Notifications API para alertas. El círculo de progreso es un SVG con stroke-dasharray animado."
+      },
+      {
+        "name": "Estadísticas",
+        "description": "Dashboard con tiempo total estudiado, racha actual, mejor racha, y heatmap de actividad mensual.",
+        "how": "Los datos se agregan en tiempo real desde el array de sesiones. El heatmap usa un grid CSS con colores interpolados según la intensidad de estudio de cada día."
+      },
+      {
+        "name": "Sistema de Logros",
+        "description": "25+ logros desbloqueables basados en tiempo estudiado, rachas, y uso de funciones. Notificaciones sutiles al desbloquear.",
+        "how": "Cada logro tiene condiciones definidas como funciones. Un hook comprueba las condiciones después de cada sesión y dispara la notificación si se cumple alguna nueva."
+      },
+      {
+        "name": "Gestión de Tareas",
+        "description": "Lista de tareas por asignatura. Puedes marcar en qué tarea estás trabajando durante una sesión de Pomodoro.",
+        "how": "CRUD simple con Zustand. Las tareas se agrupan por asignatura y se pueden filtrar. La tarea activa se asocia a la sesión para las estadísticas."
+      },
+      {
+        "name": "8 Temas Visuales",
+        "description": "Temas de color que van desde neutros hasta vibrantes. El tema persiste entre sesiones.",
+        "how": "CSS custom properties en :root. El cambio de tema actualiza las variables y toda la UI se actualiza instantáneamente sin re-render de componentes."
+      },
+      {
+        "name": "PWA",
+        "description": "Instalable en móvil y escritorio. Funciona completamente offline.",
+        "how": "Vite PWA plugin genera el Service Worker. Estrategia cache-first para assets estáticos. Manifest.json para la instalación."
+      }
+    ],
+    "features": ["Pomodoro Timer", "Statistics", "Achievements", "To-dos", "8 Themes", "PWA"],
+    "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Zustand", "PWA"],
+    "icon": "/projects/denso-icon.svg",
+    "heroImage": "/projects/densos.png",
+    "color": "#1d1d1b",
+    "link": "https://denso.study",
+    "metaDescription": "Denso - Temporizador de estudio minimalista con Pomodoro y estadísticas"
+  },
+  {
+    "id": "gestalt",
+    "title": "Gestalt",
+    "year": "2025",
+    "type": "E-commerce",
+    "category": "personal",
+    "description": "Plataforma de catálogo con colecciones curadas y comparador de productos.",
+    "longDescription": "Catálogo de productos curados con sistema de colecciones, blog integrado, comparador de productos y búsqueda avanzada. Diseño minimalista enfocado en la experiencia de descubrimiento.",
+    "caseStudy": {
+      "problem": "Las plataformas de e-commerce tradicionales están saturadas de información, pop-ups y CTAs agresivos. El usuario se pierde en un mar de productos sin contexto ni narrativa.",
+      "process": "Estudié cómo las tiendas físicas de diseño curan sus espacios. Apliqué el concepto de 'colección' como unidad narrativa — cada colección cuenta una historia y agrupa productos con sentido.",
+      "solution": "Un catálogo que prioriza el descubrimiento sobre la conversión inmediata. Colecciones editoriales, comparador para decisiones informadas, y un blog que contextualiza los productos.",
+      "results": "Una experiencia de compra más relajada donde el usuario explora en lugar de ser bombardeado."
+    },
+    "learnings": [
+      "Entendí que menos fricción no siempre significa menos pasos — a veces significa mejor contexto",
+      "Aprendí a diseñar para el 'browsing' en lugar del 'buying' — cambió mi forma de pensar en e-commerce",
+      "Descubrí cómo el contenido editorial puede mejorar la percepción de valor de un producto",
+      "Mejoré en diseño de sistemas: colecciones, productos, variantes, todo conectado"
+    ],
+    "technical": {
+      "architecture": "SPA con React y Vite. Estado global con React Context para el carrito y wishlist. Datos de productos en JSON estático (sin backend). Búsqueda client-side con fuzzy matching.",
+      "highlights": [
+        {
+          "title": "Sistema de Colecciones",
+          "description": "Cada colección es una entidad con su propia página, descripción editorial, y productos asociados. Las colecciones pueden solaparse — un producto puede estar en múltiples colecciones."
+        },
+        {
+          "title": "Comparador de Productos",
+          "description": "Selecciona hasta 3 productos y compáralos lado a lado. Las specs se alinean automáticamente y las diferencias se destacan visualmente."
+        },
+        {
+          "title": "Búsqueda Fuzzy",
+          "description": "Búsqueda tolerante a typos usando Fuse.js. Busca en nombre, descripción, categoría y tags simultáneamente con ranking de relevancia."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "El comparador necesitaba manejar productos con specs muy diferentes (algunos tienen 'material', otros 'capacidad', etc).",
+          "solution": "Normalicé las specs en categorías comunes y mostré solo las relevantes para cada comparación. Las specs únicas aparecen en una sección 'Otros'."
+        },
+        {
+          "challenge": "Las imágenes de producto tenían tamaños y ratios muy diferentes, rompiendo el grid.",
+          "solution": "Usé object-fit: cover con aspect-ratio fijo. Para el detalle, implementé un lightbox que muestra la imagen completa sin recortar."
+        },
+        {
+          "challenge": "El wishlist debía persistir entre sesiones sin backend.",
+          "solution": "localStorage con un hook personalizado que sincroniza el estado de React con storage. Incluye migración de versiones por si cambio la estructura."
+        }
+      ]
+    },
+    "featuresDetailed": [
+      {
+        "name": "Colecciones",
+        "description": "Agrupaciones editoriales de productos con su propia narrativa. Cada colección tiene página dedicada con descripción, hero image y grid de productos.",
+        "how": "Relación many-to-many entre productos y colecciones. Cada colección tiene metadata propia (título, descripción, imagen, orden de productos)."
+      },
+      {
+        "name": "Blog",
+        "description": "Artículos que contextualizan productos — guías de compra, historias de marca, tendencias. Integrado con el catálogo para linkear productos mencionados.",
+        "how": "Markdown con frontmatter para metadata. Los productos se referencian por ID y se renderizan como cards inline en el artículo."
+      },
+      {
+        "name": "Comparador",
+        "description": "Herramienta para comparar hasta 3 productos lado a lado. Muestra specs alineadas, diferencias destacadas y permite añadir al carrito desde la comparación.",
+        "how": "Estado global para los productos en comparación. Algoritmo que encuentra specs comunes y las agrupa. Highlight visual para valores diferentes."
+      },
+      {
+        "name": "Búsqueda",
+        "description": "Búsqueda instantánea con sugerencias mientras escribes. Tolerante a typos y busca en múltiples campos.",
+        "how": "Fuse.js para fuzzy search client-side. Debounce de 150ms para no saturar. Resultados rankeados por relevancia con highlighting del match."
+      },
+      {
+        "name": "Wishlist",
+        "description": "Lista de productos guardados que persiste entre sesiones. Accesible desde cualquier página con contador en el header.",
+        "how": "Context + localStorage. Hook useWishlist que expone add/remove/toggle/isInWishlist. Sincronización automática con storage."
+      }
+    ],
+    "features": ["Collections", "Blog", "Product Comparator", "Search", "Wishlist"],
+    "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Fuse.js"],
+    "icon": "/projects/gestalt-icon.svg",
+    "heroImage": "/projects/gestalts.png",
+    "color": "#0a0a0a",
+    "link": "https://gestalt-ten.vercel.app",
+    "metaDescription": "Gestalt - Plataforma de catálogo con colecciones curadas"
+  },
+  {
+    "id": "paleta",
+    "title": "Paleta",
+    "year": "2024",
+    "type": "Herramienta de Diseño",
+    "category": "personal",
+    "description": "Generador de paletas de color con IA, exportación a múltiples formatos y visualización en mockups.",
+    "longDescription": "Herramienta para diseñadores que genera paletas de color armónicas. Incluye generación con IA, ajustes manuales, exportación a CSS/Tailwind/Figma, y previsualización en mockups de UI.",
+    "features": ["AI Generation", "Export Formats", "UI Mockups", "Color Harmony", "Accessibility Check"],
+    "tech": ["React", "OpenAI API", "Tailwind", "TypeScript"],
+    "icon": "/projects/paleta-icon.svg",
+    "color": "#ec4899",
+    "link": "https://paleta.design",
+    "metaDescription": "Paleta - Generador de paletas de color con IA"
+  }
+]
