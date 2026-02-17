@@ -1,11 +1,10 @@
-import { Fraunces } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-creative",
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -15,8 +14,24 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html suppressHydrationWarning>
-      <body className={`${fraunces.variable} antialiased bg-[var(--bg)] text-[var(--text)]`}>
+    <html suppressHydrationWarning className={inter.variable}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased bg-[var(--bg)] text-[var(--text)]">
         {children}
       </body>
     </html>

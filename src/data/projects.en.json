@@ -10,8 +10,9 @@
     "features": ["Dark Mode", "Animations", "SEO", "Responsive", "Contact Form"],
     "tech": ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
     "icon": "/projects/osix-icon.svg",
+    "heroImage": "/projects/osix-hero.png",
     "color": "#6366f1",
-    "link": "https://osix.dev",
+    "link": "https://osix.tech",
     "metaDescription": "OSIX Web - Corporate website with animations and dark mode"
   },
   {
@@ -100,6 +101,7 @@
     "features": ["Passwordless Auth", "User Management", "Org Hierarchy", "Role-based UI", "Super Admin Panel", "Responsive"],
     "tech": ["React", "Vite", "React Router", "Tailwind", "TypeScript"],
     "icon": "/projects/nessie-icon.svg",
+    "heroImage": "/projects/osix-hero.png",
     "color": "#FF4D00",
     "metaDescription": "Nessie - Multi-tenant B2B platform with hexagonal architecture"
   },
@@ -189,7 +191,7 @@
     "features": ["Pomodoro Timer", "Statistics", "Achievements", "To-dos", "8 Themes", "PWA"],
     "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Zustand", "PWA"],
     "icon": "/projects/denso-icon.svg",
-    "heroImage": "/projects/densos.png",
+    "heroImage": "/projects/denso-hero.png",
     "color": "#1d1d1b",
     "link": "https://denso.study",
     "metaDescription": "Denso - Minimalist study timer with Pomodoro and statistics"
@@ -275,24 +277,8 @@
     "features": ["Collections", "Blog", "Product Comparator", "Search", "Wishlist"],
     "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Fuse.js"],
     "icon": "/projects/gestalt-icon.svg",
-    "heroImage": "/projects/gestalts.png",
     "color": "#0a0a0a",
     "link": "https://gestalt-ten.vercel.app",
     "metaDescription": "Gestalt - Catalog platform with curated collections"
-  },
-  {
-    "id": "paleta",
-    "title": "Paleta",
-    "year": "2024",
-    "type": "Design Tool",
-    "category": "personal",
-    "description": "AI-powered color palette generator with multiple export formats and UI mockup visualization.",
-    "longDescription": "A tool for designers that generates harmonious color palettes. Includes AI generation, manual adjustments, export to CSS/Tailwind/Figma, and UI mockup previews.",
-    "features": ["AI Generation", "Export Formats", "UI Mockups", "Color Harmony", "Accessibility Check"],
-    "tech": ["React", "OpenAI API", "Tailwind", "TypeScript"],
-    "icon": "/projects/paleta-icon.svg",
-    "color": "#ec4899",
-    "link": "https://paleta.design",
-    "metaDescription": "Paleta - AI-powered color palette generator"
   }
 ]

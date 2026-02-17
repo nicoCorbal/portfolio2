@@ -1,51 +1,21 @@
 @import "tailwindcss";
 
-/* Geist Font - Static weights */
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Geist';
-  src: url('/fonts/Geist-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  /* Colors - Light Mode with High Contrast */
   --bg: #F5F5F5;
   --bg-secondary: #FFFFFF;
-  --bg-contrast: #0A0A0A;
-  --text: #0A0A0A;
-  --text-muted: #595959; /* Darkened for WCAG AA contrast */
-  --accent: #FF4D00;
-  --accent-hover: #E64500;
+  --text: #1a1a1a;
+  --text-muted: #666666;
+  --accent: #1a1a1a;
+  --border: rgba(0, 0, 0, 0.1);
+}
 
-  /* Borders */
-  --border: rgba(10, 10, 10, 0.08);
-  --border-strong: rgba(10, 10, 10, 0.15);
+.dark {
+  --bg: #111111;
+  --bg-secondary: #1a1a1a;
+  --text: #ededed;
+  --text-muted: #999999;
+  --accent: #ededed;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -58,29 +28,26 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Geist', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
   color: var(--text);
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   letter-spacing: -0.01em;
   font-weight: 400;
-  overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--accent);
-  color: white;
+  background-color: var(--text);
+  color: var(--bg);
 }
 
-/* Links */
 a {
-  text-decoration: none;
+  color: inherit;
 }
 
-/* Buttons reset */
 button {
   border: none;
   background: none;
@@ -88,14 +55,13 @@ button {
   font: inherit;
 }
 
-/* Focus states for accessibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Skip to content link */
@@ -118,75 +84,6 @@ input:focus-visible,
   top: 0;
 }
 
-/* Typography utilities */
-.text-display {
-  font-size: clamp(4rem, 18vw, 20rem);
-  font-weight: 600;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-}
-
-.text-heading {
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 600;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-}
-
-.text-body-large {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-}
-
-/* Accent color */
-.text-accent {
-  color: var(--accent);
-}
-
-/* Creative font (Fraunces) */
-.font-creative {
-  font-family: var(--font-creative), serif;
-}
-
-/* Italic emphasis */
-.italic {
-  font-style: italic;
-}
-
-/* Grid system - 12 columns */
-.grid-12 {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
-}
-
-/* Tablet-specific utilities */
-@media (min-width: 640px) and (max-width: 1023px) {
-  .tablet\:text-center {
-    text-align: center;
-  }
-  .tablet\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* Scroll indicator */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-.scroll-indicator {
-  animation: bounce 2s ease-in-out infinite;
-}
-
-/* Section spacing */
-.section {
-  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 5vw, 4rem);
-}
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -199,8 +96,4 @@ input:focus-visible,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .scroll-indicator {
-    animation: none;
-  }
 }
-

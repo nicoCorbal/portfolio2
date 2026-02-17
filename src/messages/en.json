@@ -3,87 +3,55 @@
     "title": "Nicolás Corbal — Design Engineer",
     "description": "Design Engineer. I build digital products where design and code meet."
   },
-  "nav": {
-    "work": "Work",
-    "about": "About",
-    "contact": "Contact"
+  "header": {
+    "name": "Nicolás Corbal",
+    "subtitle": "Design Engineer · Santiago de Compostela"
   },
-  "hero": {
-    "subtitle": "Design Engineer — I build digital products where <design>design</design> and <code>code</code> meet.",
-    "design": "design",
-    "code": "code",
-    "basedIn": "Based in",
-    "location": "Santiago de Compostela",
-    "coordinates": "42.8782° N, 8.5448° W",
-    "available": "Available",
-    "openFor": "Open for <projects>projects</projects>",
-    "projects": "projects",
-    "scroll": "Scroll"
+  "bio": {
+    "p1": "Design Engineer at <osix>OSIX</osix>, a dev company I co-founded with six classmates from <usc>USC</usc> where I do frontend and product design. I started Computer Engineering in 2022 and three years later we built the company. Since then I haven't stopped — between classes, client projects and personal stuff there's always something going on.",
+    "p2": "I build products where design and code meet. My role is <role>frontend and product design</role> — websites, apps, technical consulting, whatever the client needs. Nine months full-time and growing. I like being involved in the whole process, from the first idea to production.",
+    "p3": "I spend most of my day between X and Illustrator. I like when a project feels right from the first click — typography, spacing, transitions, the kind of things you don't notice until they're missing. I believe good products are built by caring about the small details.",
+    "p4": "I follow studios like <lusion>Lusion</lusion> and <linear>Linear</linear> closely. Detail-oriented, fast learner, team player. The difference between good and obvious is usually the last 10 percent, and that's the part that motivates me most.",
+    "p5": "Outside of work I draw inspiration from a lot of things — <music>electronic music</music>, <films>cinema</films> and <books>reading</books>. I consume quite a bit of everything and like to mix references. I think what you see and listen to outside of work ends up showing in what you design, even if you don't realize it.",
+    "p6": "I'm also really drawn to the <berlin>Berlin</berlin> scene — the innovation, the avant-garde, the mix of cultures there. I've been several times and always come back with new ideas. There's something about that city that pushes you to think differently.",
+    "p7": "Always open to new projects and conversations — <link>get in touch</link>.",
+    "popups": {
+      "osix": {
+        "title": "OSIX",
+        "desc": "Development company · osix.dev"
+      },
+      "usc": {
+        "title": "Universidade de Santiago de Compostela",
+        "desc": "Computer Engineering · 2022–present"
+      },
+      "lusion": {
+        "title": "Lusion",
+        "desc": "Creative technology studio · London"
+      },
+      "linear": {
+        "title": "Linear",
+        "desc": "Product design benchmark"
+      },
+      "berlin": {
+        "label": "Clubs, concrete and late nights"
+      },
+      "music": {
+        "label": "Aphex Twin · Klangkuenstler · Héctor Oaks"
+      },
+      "films": {
+        "label": "La Grande Bellezza · Two Popes · Requiem"
+      },
+      "books": {
+        "label": "Dieter Rams · Camus · Night Fever · 1Q84"
+      }
+    }
   },
   "projects": {
-    "watermark": "Work",
-    "professional": "Professional Work",
-    "professionalSubtitle": "Projects where I <highlight>collaborated</highlight> with teams and clients.",
-    "professionalHighlight": "collaborated",
-    "personal": "Personal Projects",
-    "personalSubtitle": "Experiments and personal projects where I <highlight>explore ideas</highlight>.",
-    "personalHighlight": "explore ideas"
+    "title": "Projects"
   },
-  "about": {
-    "title": "About",
-    "headline": "Design Engineer at <company>OSIX</company>. I build products where design and code meet.",
-    "story": {
-      "p1": "I've always been drawn to this world. From tinkering with computers as a kid to building digital products today. In <year>2022</year> I started Computer Engineering at USC, and three years later co-founded <company>OSIX</company> with six classmates.",
-      "p2": "OSIX is a development company where we do it all: websites, apps, technical consulting... whatever the client needs. My role is <role>frontend and product design</role>. I've been doing this full-time for 6 months, and the goal is clear: grow the company.",
-      "p3": "I'm inspired by creative studios that care about every detail — Basement, Studiofreight, Active Theory. That level of <craft>craft</craft> is what I pursue. I'm detail-oriented, an experimenter, and I love working in teams. I learn fast and adapt to any stack."
-    },
-    "role": "frontend and product design",
-    "craft": "craft",
-    "defines": "What defines me",
-    "differentiators": {
-      "bridge": "Bridge between design and code",
-      "detail": "Obsession with detail",
-      "learn": "Fast learner",
-      "product": "Product vision"
-    },
-    "stack": "Stack",
-    "values": "What I value",
-    "valuesList": {
-      "freedom": {
-        "title": "Creative freedom",
-        "description": "Space to propose and experiment"
-      },
-      "team": {
-        "title": "Great team",
-        "description": "People you enjoy working with"
-      },
-      "impact": {
-        "title": "Real impact",
-        "description": "Projects that make a difference"
-      }
-    },
-    "currently": "Currently",
-    "education": "Education",
-    "educationValue": "USC — Computer Engineering",
-    "locationLabel": "Location",
-    "locationValue": "Santiago de Compostela",
-    "easterEgg": {
-      "hint": "psst... type",
-      "key": "play",
-      "surprise": "for a surprise",
-      "mobileText": "a game"
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "headline": "Have a project in mind?",
-    "description": "I'm always open to new opportunities and collaborations. If you have an idea or project, don't hesitate to reach out.",
-    "email": "Email",
-    "social": "Social",
-    "footer": {
-      "location": "Santiago de Compostela, Spain",
-      "copyright": "© {year} Nicolás Corbal"
-    }
+  "footer": {
+    "reach": "Reach me at <email>hola@nicolascorbal.com</email> · <twitter>Twitter</twitter> · <github>GitHub</github> · <linkedin>LinkedIn</linkedin>",
+    "copyright": "© {year} Nicolás Corbal"
   },
   "projectDetail": {
     "back": "Back",
@@ -119,20 +87,5 @@
       "viewProject": "View project",
       "github": "GitHub"
     }
-  },
-  "game": {
-    "title": "type.",
-    "instructions": "Type the words before they disappear",
-    "best": "Best",
-    "play": "Play",
-    "close": "Esc to close",
-    "word": "word",
-    "words": "words",
-    "newRecord": "New Record!",
-    "again": "Again",
-    "esc": "Esc"
-  },
-  "preloader": {
-    "loading": "Loading"
   }
 }
