@@ -28,7 +28,7 @@ export default function ProjectPage() {
                      (project.featuresDetailed && project.featuresDetailed.length > 0) || project.technical;
 
   return (
-    <main className="max-w-[720px] mx-auto px-6 py-16">
+    <main className="max-w-[720px] mx-auto px-6 py-16 animate-[fade-in_0.5s_ease-out_both]">
       {/* Nav */}
       <nav className="mb-12">
         <Link

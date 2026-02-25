@@ -4,15 +4,15 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import HoverPopup from "@/components/HoverPopup";
 
-/* ── Collage popup: scattered photos at angles ── */
+/* ── Collage popup: photos scatter in with stagger ── */
 function CollagePopup({ images, label }: { images: { src: string; alt: string; rotate: string; z: number; left: string; top: string; w: string; h: string }[]; label?: string }) {
   return (
-    <span className="block w-[280px]">
-      <span className="relative block h-[180px] w-full">
+    <span className="block w-[320px]">
+      <span className="relative block h-[210px] w-full">
         {images.map((img, i) => (
           <span
             key={i}
-            className="absolute rounded-lg overflow-hidden border-2 border-[var(--bg-secondary)]"
+            className="absolute collage-photo"
             style={{
               width: img.w,
               height: img.h,
@@ -20,10 +20,14 @@ function CollagePopup({ images, label }: { images: { src: string; alt: string; r
               top: img.top,
               transform: `rotate(${img.rotate})`,
               zIndex: img.z,
-              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
             }}
           >
-            <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="140px" />
+            <span
+              className="block w-full h-full rounded-lg overflow-hidden"
+              style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.25), 0 1px 4px rgba(0,0,0,0.1)" }}
+            >
+              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="150px" />
+            </span>
           </span>
         ))}
       </span>
@@ -34,16 +38,16 @@ function CollagePopup({ images, label }: { images: { src: string; alt: string; r
   );
 }
 
-/* ── Cover grid: albums, movies, or books side by side ── */
+/* ── Cover grid: staggered entrance + hover dimming ── */
 function CoverGridPopup({ covers, label }: { covers: { src: string; alt: string }[]; label?: string }) {
   return (
-    <span className="block w-[280px]">
-      <span className="flex gap-2 p-3">
+    <span className="block w-[320px]">
+      <span className="flex gap-2.5 p-3 cover-grid">
         {covers.map((cover, i) => (
           <span
             key={i}
-            className="relative flex-1 aspect-[2/3] rounded-md overflow-hidden transition-transform duration-200 ease-out hover:scale-110 hover:z-10"
-            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.12)" }}
+            className="relative flex-1 aspect-[2/3] rounded-lg overflow-hidden cover-item"
+            style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.15)" }}
           >
             <Image src={cover.src} alt={cover.alt} fill className="object-cover" sizes="90px" />
           </span>
@@ -56,15 +60,15 @@ function CoverGridPopup({ covers, label }: { covers: { src: string; alt: string 
   );
 }
 
-/* ── Icon + text card (OSIX, studios) ── */
-function IconCardPopup({ icon, icon_bg, title, desc }: { icon: string; icon_bg: string; title: string; desc: string }) {
+/* ── Icon + text card ── */
+function IconCardPopup({ icon, icon_bg, title, desc, invert = false }: { icon: string; icon_bg: string; title: string; desc: string; invert?: boolean }) {
   return (
-    <span className="flex items-center gap-3 w-[260px] px-4 py-3">
+    <span className="flex items-center gap-3 w-[280px] px-4 py-3">
       <span
         className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
         style={{ backgroundColor: icon_bg }}
       >
-        <Image src={icon} alt={title} width={24} height={24} className="brightness-0 invert" />
+        <Image src={icon} alt={title} width={24} height={24} className={invert ? "brightness-0 invert" : ""} />
       </span>
       <span className="flex flex-col gap-0.5 min-w-0">
         <span className="font-medium text-sm">{title}</span>
@@ -74,25 +78,25 @@ function IconCardPopup({ icon, icon_bg, title, desc }: { icon: string; icon_bg: 
   );
 }
 
-/* ── Image + text card (USC) ── */
+/* ── Image + text card with stagger + ken burns ── */
 function ImageCardPopup({ image, title, desc }: { image: string; title: string; desc: string }) {
   return (
-    <span className="block w-[280px]">
-      <span className="relative block h-[120px] w-full">
-        <Image src={image} alt={title} fill className="object-cover" sizes="280px" />
+    <span className="block w-[320px] popup-stagger">
+      <span className="relative block h-[160px] w-full popup-img-zoom">
+        <Image src={image} alt={title} fill className="object-cover" sizes="320px" />
       </span>
       <span className="flex flex-col gap-0.5 px-4 py-3">
         <span className="font-medium text-sm">{title}</span>
-        <span className="text-xs text-[var(--text-muted)]">{desc}</span>
+        <span className="text-xs text-[var(--text-muted)] leading-relaxed">{desc}</span>
       </span>
     </span>
   );
 }
 
-/* ── Letter avatar card (studios without icon) ── */
+/* ── Letter avatar card ── */
 function StudioPopup({ name, desc, color }: { name: string; desc: string; color: string }) {
   return (
-    <span className="flex items-center gap-3 w-[240px] px-4 py-3">
+    <span className="flex items-center gap-3 w-[280px] px-4 py-3">
       <span
         className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm"
         style={{ backgroundColor: color }}
@@ -107,13 +111,25 @@ function StudioPopup({ name, desc, color }: { name: string; desc: string; color:
   );
 }
 
-/* ── Image data ── */
-const BERLIN_IMAGES = [
-  { src: "/popups/berlin-1.jpg", alt: "Berlin night", rotate: "-4deg", z: 1, left: "10px", top: "20px", w: "130px", h: "100px" },
-  { src: "/popups/berlin-2.jpg", alt: "Berlin neon", rotate: "3deg", z: 2, left: "75px", top: "45px", w: "130px", h: "100px" },
-  { src: "/popups/berlin-3.jpg", alt: "Berghain", rotate: "-2deg", z: 3, left: "140px", top: "10px", w: "130px", h: "100px" },
-];
+/* ── Symbol + text card (X, Illustrator, socials) ── */
+export function SymbolCardPopup({ symbol, bg, fg, title, desc }: { symbol: string; bg: string; fg?: string; title: string; desc: string }) {
+  return (
+    <span className="flex items-center gap-3 w-[280px] px-4 py-3">
+      <span
+        className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base"
+        style={{ backgroundColor: bg, color: fg || "#fff" }}
+      >
+        {symbol}
+      </span>
+      <span className="flex flex-col gap-0.5 min-w-0">
+        <span className="font-medium text-sm">{title}</span>
+        <span className="text-xs text-[var(--text-muted)]">{desc}</span>
+      </span>
+    </span>
+  );
+}
 
+/* ── Image data ── */
 
 const MUSIC_COVERS = [
   { src: "/popups/music-aphex.jpg", alt: "Aphex Twin — SAW 85-92" },
@@ -166,6 +182,32 @@ export default function Bio() {
       {/* P3: Day to day */}
       <p>{t("p3")}</p>
 
+      {/* Stack */}
+      <p>
+        {t.rich("stack", {
+          react: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-react.svg" icon_bg="#222222" title={t("popups.react.title")} desc={t("popups.react.desc")} />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          next: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-next.svg" icon_bg="#000000" title={t("popups.next.title")} desc={t("popups.next.desc")} />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          ts: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-ts.svg" icon_bg="#3178C6" title={t("popups.ts.title")} desc={t("popups.ts.desc")} />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          tailwind: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-tailwind.svg" icon_bg="#222222" title={t("popups.tailwind.title")} desc={t("popups.tailwind.desc")} />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+        })}
+      </p>
+
       {/* P4: Studios */}
       <p>
         {t.rich("p4", {
@@ -197,17 +239,6 @@ export default function Bio() {
           ),
           books: (chunks) => (
             <HoverPopup content={<CoverGridPopup covers={BOOK_COVERS} label={t("popups.books.label")} />}>
-              <span className={`${link_class} cursor-default`}>{chunks}</span>
-            </HoverPopup>
-          ),
-        })}
-      </p>
-
-      {/* P6: Berlin */}
-      <p>
-        {t.rich("p6", {
-          berlin: (chunks) => (
-            <HoverPopup content={<CollagePopup images={BERLIN_IMAGES} label={t("popups.berlin.label")} />}>
               <span className={`${link_class} cursor-default`}>{chunks}</span>
             </HoverPopup>
           ),

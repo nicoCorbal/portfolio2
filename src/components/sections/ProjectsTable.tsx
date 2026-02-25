@@ -8,41 +8,41 @@ import HoverPopup from "@/components/HoverPopup";
 
 function ProjectPopup({ project }: { project: { title: string; description: string; icon: string; heroImage?: string; color: string; tech: string[] } }) {
   return (
-    <span className="flex flex-col w-[280px]">
+    <span className="flex flex-col w-[320px] popup-stagger">
       {project.heroImage ? (
-        <span className="block relative h-[140px] w-full">
+        <span className="block relative h-[180px] w-full popup-img-zoom">
           <Image
             src={project.heroImage}
             alt={project.title}
             fill
             className="object-cover"
-            sizes="280px"
+            sizes="320px"
           />
         </span>
       ) : (
         <span
-          className="flex items-center justify-center h-[100px] w-full"
+          className="flex items-center justify-center h-[120px] w-full"
           style={{ backgroundColor: project.color }}
         >
           <Image
             src={project.icon}
             alt={project.title}
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             className="brightness-0 invert opacity-80"
           />
         </span>
       )}
-      <span className="flex flex-col gap-1.5 px-4 py-3">
+      <span className="flex flex-col gap-2 px-4 py-3">
         <span className="font-medium text-sm">{project.title}</span>
         <span className="text-xs text-[var(--text-muted)] leading-relaxed line-clamp-2">
           {project.description}
         </span>
-        <span className="flex flex-wrap gap-1 pt-1">
-          {project.tech.slice(0, 3).map((t) => (
+        <span className="flex flex-wrap gap-1.5 pt-0.5">
+          {project.tech.slice(0, 4).map((t) => (
             <span
               key={t}
-              className="text-[10px] px-1.5 py-0.5 rounded-full bg-[var(--bg)] text-[var(--text-muted)]"
+              className="text-[10px] px-2 py-0.5 rounded-full text-[var(--text-muted)] border border-[var(--border)]"
             >
               {t}
             </span>

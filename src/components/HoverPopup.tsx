@@ -18,7 +18,7 @@ export default function HoverPopup({ children, content, position = "top" }: Prop
   }, []);
 
   const hide = useCallback(() => {
-    timeout_ref.current = setTimeout(() => set_visible(false), 120);
+    timeout_ref.current = setTimeout(() => set_visible(false), 150);
   }, []);
 
   const is_top = position === "top";
@@ -36,17 +36,20 @@ export default function HoverPopup({ children, content, position = "top" }: Prop
           opacity: visible ? 1 : 0,
           transform: visible
             ? "translateX(-50%) translateY(0) scale(1)"
-            : `translateX(-50%) translateY(${is_top ? "8px" : "-8px"}) scale(0.97)`,
-          transition: "opacity 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1)",
+            : `translateX(-50%) translateY(${is_top ? "16px" : "-16px"}) scale(0.8)`,
+          transition: visible
+            ? "opacity 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)"
+            : "opacity 0.15s ease-out, transform 0.15s ease-out",
           pointerEvents: visible ? "auto" : "none",
         }}
         onMouseEnter={show}
         onMouseLeave={hide}
       >
         <span
-          className="block overflow-hidden rounded-xl bg-[var(--bg-secondary)] text-[var(--text)]"
+          data-open={visible}
+          className="block overflow-hidden rounded-2xl bg-[var(--bg-secondary)] text-[var(--text)]"
           style={{
-            boxShadow: "0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
+            boxShadow: "var(--popup-shadow)",
             border: "1px solid var(--border)",
           }}
         >

@@ -11,9 +11,9 @@
     "p1": "Soy Design Engineer en <osix>OSIX</osix>, una empresa de desarrollo que monté con seis compañeros de la <usc>USC</usc>. Llevo el frontend y el diseño de producto. Empecé Informática en 2022 y tres años después nos lanzamos con la empresa. Entre clases, proyectos de clientes y cosas propias siempre hay algo en marcha.",
     "p2": "Hago productos donde el diseño y el código van de la mano. Mi día a día es <role>frontend y diseño de producto</role> — webs, apps, consultoría, lo que toque. Llevamos nueve meses a tiempo completo y creciendo. Me gusta estar metido en todo el proceso, desde la primera idea hasta que sale a producción.",
     "p3": "Paso bastante rato en X y en Illustrator. Me importa que un proyecto se sienta bien desde el primer click — la tipografía, el espaciado, las transiciones, esas cosas que no notas hasta que faltan. Al final los buenos productos se hacen cuidando lo pequeño.",
+    "stack": "Mi stack es <react>React</react>, <next>Next.js</next>, <ts>TypeScript</ts> y <tailwind>Tailwind</tailwind>. Me gusta que las herramientas no estorben — que te dejen pensar en el producto y no en la configuración.",
     "p4": "Sigo de cerca a gente como <lusion>Lusion</lusion> y <linear>Linear</linear>. Soy bastante detallista, aprendo rápido y me gusta trabajar en equipo. Lo que marca la diferencia suele estar en el último 10 por ciento, y es lo que más me motiva.",
     "p5": "Fuera del trabajo me inspiran muchas cosas — la <music>electrónica</music>, el <films>cine</films> y la <books>lectura</books>. Consumo bastante de todo y me gusta mezclar referencias. Creo que lo que ves y escuchas fuera del trabajo acaba apareciendo en lo que diseñas, aunque sea sin darte cuenta.",
-    "p6": "También me atrae mucho el ambiente de <berlin>Berlín</berlin> — la innovación, la vanguardia, la mezcla de culturas que hay allí. He ido varias veces y siempre vuelvo con ideas nuevas. Hay algo en esa ciudad que te empuja a pensar diferente.",
     "p7": "Siempre abierto a proyectos nuevos y a conversar — <link>escríbeme</link>.",
     "popups": {
       "osix": {
@@ -32,9 +32,6 @@
         "title": "Linear",
         "desc": "Referente en diseño de producto"
       },
-      "berlin": {
-        "label": "Clubs, hormigón y trasnoche"
-      },
       "music": {
         "label": "Aphex Twin · Klangkuenstler · Héctor Oaks"
       },
@@ -43,6 +40,30 @@
       },
       "books": {
         "label": "Dieter Rams · Camus · Night Fever · 1Q84"
+      },
+      "x": {
+        "title": "@nicocorbal",
+        "desc": "Diseño, frontend y cosas que me inspiran"
+      },
+      "illustrator": {
+        "title": "Adobe Illustrator",
+        "desc": "Mi herramienta para explorar ideas visuales"
+      },
+      "react": {
+        "title": "React",
+        "desc": "Librería para interfaces de usuario"
+      },
+      "next": {
+        "title": "Next.js",
+        "desc": "Framework fullstack de React"
+      },
+      "ts": {
+        "title": "TypeScript",
+        "desc": "JavaScript con tipos estáticos"
+      },
+      "tailwind": {
+        "title": "Tailwind CSS",
+        "desc": "Framework de utilidades CSS"
       }
     }
   },
@@ -51,7 +72,25 @@
   },
   "footer": {
     "reach": "Contáctame en <email>hola@nicolascorbal.com</email> · <twitter>Twitter</twitter> · <github>GitHub</github> · <linkedin>LinkedIn</linkedin>",
-    "copyright": "© {year} Nicolás Corbal"
+    "copyright": "© {year} Nicolás Corbal",
+    "popups": {
+      "email": {
+        "title": "hola@nicolascorbal.com",
+        "desc": "Respondo en menos de 24h"
+      },
+      "twitter": {
+        "title": "@nicocorbal",
+        "desc": "Diseño, frontend y lo que me inspira"
+      },
+      "github": {
+        "title": "nicolascorbal",
+        "desc": "Proyectos open source y experimentos"
+      },
+      "linkedin": {
+        "title": "Nicolás Corbal",
+        "desc": "Design Engineer en OSIX"
+      }
+    }
   },
   "projectDetail": {
     "back": "Volver",
