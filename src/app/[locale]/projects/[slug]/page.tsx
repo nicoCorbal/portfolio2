@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { getProjectBySlug, getAdjacentProjects } from "@/lib/projects";
+import { DevEditor } from "@/lib/live-editor";
+import { LiveEditorDemo } from "@/components/demos/LiveEditorDemo";
 
 export default function ProjectPage() {
   const params = useParams();
@@ -72,11 +74,15 @@ export default function ProjectPage() {
         </div>
       </header>
 
-      {/* Hero Image */}
-      {project.heroImage ? (
+      {/* Hero Image / Demo */}
+      {project.id === "live-editor" ? (
+        <div className="mb-10">
+          <LiveEditorDemo />
+        </div>
+      ) : (project.screenshot || project.heroImage) ? (
         <div className="rounded-lg overflow-hidden border border-[var(--border)] mb-10">
           <Image
-            src={project.heroImage}
+            src={(project.screenshot || project.heroImage)!}
             alt={project.title}
             width={720}
             height={450}
@@ -311,6 +317,9 @@ export default function ProjectPage() {
           </Link>
         )}
       </nav>
+
+      {/* Live Editor button — only on the live-editor project page */}
+      {project.id === "live-editor" && process.env.NODE_ENV === "development" && <DevEditor />}
     </main>
   );
 }

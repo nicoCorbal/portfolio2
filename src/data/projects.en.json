@@ -101,7 +101,6 @@
     "features": ["Passwordless Auth", "User Management", "Org Hierarchy", "Role-based UI", "Super Admin Panel", "Responsive"],
     "tech": ["React", "Vite", "React Router", "Tailwind", "TypeScript"],
     "icon": "/projects/nessie-icon.svg",
-    "heroImage": "/projects/osix-hero.png",
     "color": "#FF4D00",
     "metaDescription": "Nessie - Multi-tenant B2B platform with hexagonal architecture"
   },
@@ -191,7 +190,7 @@
     "features": ["Pomodoro Timer", "Statistics", "Achievements", "To-dos", "8 Themes", "PWA"],
     "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Zustand", "PWA"],
     "icon": "/projects/denso-icon.svg",
-    "heroImage": "/projects/denso-hero.png",
+    "screenshot": "/projects/densos.png",
     "color": "#1d1d1b",
     "link": "https://denso.study",
     "metaDescription": "Denso - Minimalist study timer with Pomodoro and statistics"
@@ -277,8 +276,115 @@
     "features": ["Collections", "Blog", "Product Comparator", "Search", "Wishlist"],
     "tech": ["React", "Vite", "Framer Motion", "Tailwind", "Fuse.js"],
     "icon": "/projects/gestalt-icon.svg",
+    "screenshot": "/projects/gestalts.png",
     "color": "#0a0a0a",
     "link": "https://gestalt-ten.vercel.app",
     "metaDescription": "Gestalt - Catalog platform with curated collections"
+  },
+  {
+    "id": "binder",
+    "title": "Binder",
+    "year": "2025",
+    "type": "Web App",
+    "category": "personal",
+    "description": "Personal manga collection tracker with cloud sync, statistics and AniList integration.",
+    "longDescription": "A manga collection tracker built for readers who want to curate their own library. Track reading status, chapters and ratings. Discover new manga via AniList integration. Organize with custom collections. Visualize your reading habits with statistics. Optional cloud sync with Supabase.",
+    "caseStudy": {
+      "problem": "Existing manga trackers are cluttered, ad-heavy, and force you into social features you don't need. There's no clean, personal tool for simply managing your reading.",
+      "process": "I designed around the concept of a personal shelf — your library, your rules. I focused on the reading workflow: add, track, organize, reflect. Each feature was added only when it served that flow.",
+      "solution": "A fast, offline-first app with a warm minimalist design. Local storage by default, optional cloud sync. Command palette for power users, batch operations for efficiency, and statistics for reflection.",
+      "results": "A polished product with a landing page, smooth GSAP animations, and a complete feature set that rivals established trackers — without the bloat."
+    },
+    "learnings": [
+      "Designed and built a complete product from landing page to cloud sync",
+      "Implemented sophisticated GSAP animations including SplitText and ScrollTrigger",
+      "Built an offline-first architecture with optional Supabase sync",
+      "Learned to integrate third-party APIs (AniList GraphQL) for content discovery"
+    ],
+    "technical": {
+      "architecture": "SPA with React 19 and Vite. State management with Zustand (6 focused stores with persist middleware). Supabase for optional auth and cloud sync. AniList GraphQL API for manga metadata. GSAP for landing page animations.",
+      "highlights": [
+        {
+          "title": "Landing Page Animations",
+          "description": "Word-by-word entrance with GSAP SplitText, scroll-triggered reveals, marquee animation. Smooth, cinematic feel that sets the tone for the product."
+        },
+        {
+          "title": "Offline-First with Cloud Sync",
+          "description": "All data persists locally via Zustand. Optional Supabase auth enables cross-device sync with visual sync status indicators."
+        },
+        {
+          "title": "Command Palette",
+          "description": "⌘K quick search across your entire library. Filter, navigate, and perform actions without leaving the keyboard."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Syncing local-first data with a cloud database without conflicts.",
+          "solution": "Timestamp-based conflict resolution. Local changes are queued and synced in batches. Visual indicators show sync status (pending, syncing, synced)."
+        },
+        {
+          "challenge": "AniList API rate limiting when browsing the discover section.",
+          "solution": "Request debouncing, pagination with load-more pattern, and client-side caching of fetched manga metadata."
+        }
+      ]
+    },
+    "features": ["Collection Tracking", "Cloud Sync", "Statistics", "AniList Integration", "Command Palette", "Collections"],
+    "tech": ["React", "Vite", "Zustand", "Supabase", "GSAP", "Tailwind"],
+    "icon": "/projects/binder-icon.svg",
+    "screenshot": "/projects/binder.png",
+    "color": "#2b8a7e",
+    "metaDescription": "Binder - Personal manga collection tracker with cloud sync and statistics"
+  },
+  {
+    "id": "live-editor",
+    "title": "Quill",
+    "year": "2025",
+    "type": "Developer Tool",
+    "category": "personal",
+    "description": "In-page text editor that lets you click any content and edit it inline — changes are saved directly to source files.",
+    "longDescription": "A self-contained live editing module for Next.js apps. Click any text on the page, edit it in a rich text panel with FLIP morph animations, and the changes are persisted directly to JSON or TSX source files via an API route.",
+    "caseStudy": {
+      "problem": "Editing website content required opening an IDE, finding the right file and key, making the change, and waiting for hot reload. The feedback loop was slow and error-prone.",
+      "process": "I designed an event-delegation system that detects editable elements via data attributes. A Tiptap-based panel opens with a FLIP morph animation from the element's position. Changes are sent to an API route that patches the source file.",
+      "solution": "A zero-config module: wrap content in <Editable>, add <DevEditor /> to the layout, and you get click-to-edit with persistence. Supports JSON (i18n files) and TSX source files.",
+      "results": "Content editing goes from minutes to seconds. The module is fully self-contained with its own CSS variables, no external UI dependencies."
+    },
+    "learnings": [
+      "Implemented FLIP morph animations for smooth panel transitions from any element position",
+      "Built an event-delegation selector that works across the entire page without per-element listeners",
+      "Designed a multi-strategy patcher that edits both JSON and TSX files while preserving formatting",
+      "Created a wave entrance animation using distance-based stagger delays from a trigger point"
+    ],
+    "technical": {
+      "architecture": "Client-side: React components with data attributes for editable regions. Event delegation detects clicks. Tiptap editor with BubbleMenu toolbar. Server-side: API route that reads source files, applies patches using AST for TSX or dot-path for JSON, and writes back.",
+      "highlights": [
+        {
+          "title": "FLIP Morph Animation",
+          "description": "Editor panel morphs from the clicked element's exact position. Border transitions from dashed to ring, backdrop blurs in, header slides from collapsed."
+        },
+        {
+          "title": "Event Delegation Selector",
+          "description": "Single document listener detects all [data-editable] elements. Calculates wave delays from button center for staggered entrance animation."
+        },
+        {
+          "title": "Multi-Strategy Patcher",
+          "description": "API route that patches JSON files by dot-path navigation and TSX files by AST manipulation. Preserves formatting and comments."
+        }
+      ],
+      "challenges": [
+        {
+          "challenge": "Rich text with inline XML tags (like next-intl t.rich()) lost tag structure when edited as plain text.",
+          "solution": "Store the raw JSON string (with XML tags) as data-raw-value. The editor shows and saves the raw format, preserving <tag>content</tag> structure."
+        },
+        {
+          "challenge": "Block elements (p) as editable containers showed full-width outlines that looked wrong.",
+          "solution": "Use inline span wrappers inside block elements so the dashed outline hugs the text content tightly."
+        }
+      ]
+    },
+    "features": ["Inline Editing", "FLIP Animation", "Rich Text", "JSON Patching", "TSX Patching"],
+    "tech": ["React", "Tiptap", "Next.js", "TypeScript", "CSS Variables"],
+    "icon": "/projects/quill-icon.svg",
+    "color": "#1a1a1a"
   }
 ]

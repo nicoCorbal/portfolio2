@@ -2,7 +2,7 @@
 
 import Header from "@/components/Header";
 import Bio from "@/components/sections/Bio";
-import ProjectsTable from "@/components/sections/ProjectsTable";
+import ProjectsGrid from "@/components/sections/ProjectsGrid";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <Bio />
       <hr className="my-12 border-[var(--border)]" />
-      <ProjectsTable />
+      <ProjectsGrid />
       <hr className="my-12 border-[var(--border)]" />
       <Contact />
     </main>

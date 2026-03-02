@@ -1,0 +1,174 @@
+/* ══════════════════════════════════════════════════════════
+   Live Editor — self-contained CSS
+   Import this file in your project's global stylesheet:
+     @import "../lib/live-editor/live-editor.css";
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Panel variables (light — monochrome palette) ── */
+:root {
+  --le-accent: #1a1a1a;
+  --le-accent-soft: rgba(0, 0, 0, 0.04);
+  --le-accent-ring: rgba(0, 0, 0, 0.12);
+
+  --le-panel-bg: #ffffff;
+  --le-panel-text: #1a1a1a;
+  --le-panel-text-muted: #666666;
+  --le-panel-border: rgba(0, 0, 0, 0.08);
+  --le-panel-ring: rgba(0, 0, 0, 0.12);
+  --le-panel-error: #dc2626;
+  --le-panel-success: #1a1a1a;
+
+  --le-btn-bg: #1a1a1a;
+  --le-btn-hover: #1a1a1a;
+  --le-close-hover-bg: #f5f5f5;
+}
+
+/* ── Dark mode overrides ── */
+.dark {
+  --le-accent: #ededed;
+  --le-accent-soft: rgba(255, 255, 255, 0.04);
+  --le-accent-ring: rgba(255, 255, 255, 0.10);
+
+  --le-panel-bg: #1a1a1a;
+  --le-panel-text: #ededed;
+  --le-panel-text-muted: #999999;
+  --le-panel-border: rgba(255, 255, 255, 0.08);
+  --le-panel-ring: rgba(255, 255, 255, 0.10);
+  --le-panel-error: #ef4444;
+  --le-panel-success: #ededed;
+
+  --le-btn-bg: #ededed;
+  --le-btn-hover: #ededed;
+  --le-close-hover-bg: #262626;
+}
+
+/* ── Keyframes ── */
+@keyframes le-float-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes le-wave-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes le-pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 var(--le-accent-ring); }
+  50%      { box-shadow: 0 0 0 6px transparent; }
+}
+
+@keyframes le-check-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes le-check-circle {
+  from { stroke-dashoffset: 44; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes le-success-ping {
+  0%   { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.5); }
+}
+
+@keyframes le-label-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes le-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Edit mode — editorial dashed highlight ── */
+[data-live-edit-mode="true"] [data-editable] {
+  cursor: pointer;
+  position: relative;
+  outline: 1.5px dashed var(--le-accent-ring);
+  outline-offset: 3px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition:
+    outline-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.25s ease;
+  animation: le-wave-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--le-delay, 0ms);
+}
+
+/* Hover: dashed becomes prominent + glow ring */
+[data-live-edit-mode="true"] [data-editable][data-editable-hovered] {
+  outline-color: var(--le-accent);
+  background-color: var(--le-accent-soft);
+  box-shadow: 0 0 0 6px var(--le-accent-ring);
+}
+
+/* Tooltip — editorial style with pencil ✎ */
+[data-live-edit-mode="true"] [data-editable][data-editable-hovered]::after {
+  content: "✎  edit";
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: var(--bg, #fff);
+  background: var(--text, #1a1a1a);
+  pointer-events: none;
+  animation: le-float-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Demo-scoped edit mode — mirrors real editor styles
+   but uses [data-demo-edit-mode] + [data-demo-editable]
+   ══════════════════════════════════════════════════════════ */
+
+[data-demo-edit-mode="true"] [data-demo-editable] {
+  cursor: pointer;
+  position: relative;
+  outline: 1.5px dashed var(--le-accent-ring);
+  outline-offset: 3px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition:
+    outline-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.25s ease;
+  animation: le-wave-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--le-delay, 0ms);
+}
+
+/* Hover: dashed becomes prominent + glow ring */
+[data-demo-edit-mode="true"] [data-demo-editable][data-demo-hovered] {
+  outline-color: var(--le-accent);
+  background-color: var(--le-accent-soft);
+  box-shadow: 0 0 0 6px var(--le-accent-ring);
+}
+
+/* Tooltip */
+[data-demo-edit-mode="true"] [data-demo-editable][data-demo-hovered]::after {
+  content: "✎  edit";
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: var(--bg, #fff);
+  background: var(--text, #1a1a1a);
+  pointer-events: none;
+  animation: le-float-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

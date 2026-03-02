@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllProjects } from "@/lib/projects";
 import HoverPopup from "@/components/HoverPopup";
+import { EditableText } from "@/components/EditableText";
 
 function ProjectPopup({ project }: { project: { title: string; description: string; icon: string; heroImage?: string; color: string; tech: string[] } }) {
   return (
@@ -60,16 +61,16 @@ export default function ProjectsTable() {
 
   return (
     <section>
-      <h2 className="text-sm font-medium text-[var(--text-muted)] mb-6">{t("title")}</h2>
+      <h2 className="text-sm font-medium text-[var(--text-muted)] mb-6"><EditableText content_key="projects.title">{t("title")}</EditableText></h2>
       <div>
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <div
             key={project.id}
             className="flex items-start justify-between gap-4 py-4 border-b border-[var(--border)]"
           >
             <div className="flex items-start gap-4 min-w-0">
               <span className="text-[var(--text-muted)] text-sm tabular-nums w-10 shrink-0 pt-0.5">
-                {project.year}
+                <EditableText content_key={`[${i}].year`} file="projects">{project.year}</EditableText>
               </span>
               <div className="flex flex-col gap-1 min-w-0">
                 <HoverPopup
@@ -79,16 +80,16 @@ export default function ProjectsTable() {
                     href={`/${locale}/projects/${project.id}`}
                     className="underline underline-offset-3 decoration-[var(--text-muted)] hover:decoration-[var(--text)] transition-colors"
                   >
-                    {project.title}
+                    <EditableText content_key={`[${i}].title`} file="projects">{project.title}</EditableText>
                   </Link>
                 </HoverPopup>
                 <span className="text-[13px] text-[var(--text-muted)] leading-snug line-clamp-1">
-                  {project.description}
+                  <EditableText content_key={`[${i}].description`} file="projects">{project.description}</EditableText>
                 </span>
               </div>
             </div>
             <span className="text-[var(--text-muted)] text-sm shrink-0 hidden sm:inline pt-0.5">
-              {project.type}
+              <EditableText content_key={`[${i}].type`} file="projects">{project.type}</EditableText>
             </span>
           </div>
         ))}

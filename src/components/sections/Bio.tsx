@@ -39,7 +39,7 @@ function CollagePopup({ images, label }: { images: { src: string; alt: string; r
 }
 
 /* ── Cover grid: staggered entrance + hover dimming ── */
-function CoverGridPopup({ covers, label }: { covers: { src: string; alt: string }[]; label?: string }) {
+function CoverGridPopup({ covers, label }: { covers: { src: string; alt: string }[]; label?: React.ReactNode }) {
   return (
     <span className="block w-[320px]">
       <span className="flex gap-2.5 p-3 cover-grid">
@@ -61,14 +61,14 @@ function CoverGridPopup({ covers, label }: { covers: { src: string; alt: string 
 }
 
 /* ── Icon + text card ── */
-function IconCardPopup({ icon, icon_bg, title, desc, invert = false }: { icon: string; icon_bg: string; title: string; desc: string; invert?: boolean }) {
+export function IconCardPopup({ icon, icon_bg, title, desc, invert = false, full = false }: { icon: string; icon_bg?: string; title: React.ReactNode; desc: React.ReactNode; invert?: boolean; full?: boolean }) {
   return (
     <span className="flex items-center gap-3 w-[280px] px-4 py-3">
       <span
-        className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+        className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${full ? "overflow-hidden" : ""}`}
         style={{ backgroundColor: icon_bg }}
       >
-        <Image src={icon} alt={title} width={24} height={24} className={invert ? "brightness-0 invert" : ""} />
+        <Image src={icon} alt="" width={full ? 48 : 24} height={full ? 48 : 24} className={`${invert ? "brightness-0 invert" : ""} ${full ? "w-full h-full" : ""}`} />
       </span>
       <span className="flex flex-col gap-0.5 min-w-0">
         <span className="font-medium text-sm">{title}</span>
@@ -79,11 +79,11 @@ function IconCardPopup({ icon, icon_bg, title, desc, invert = false }: { icon: s
 }
 
 /* ── Image + text card with stagger + ken burns ── */
-function ImageCardPopup({ image, title, desc }: { image: string; title: string; desc: string }) {
+function ImageCardPopup({ image, title, desc }: { image: string; title: React.ReactNode; desc: React.ReactNode }) {
   return (
     <span className="block w-[320px] popup-stagger">
       <span className="relative block h-[160px] w-full popup-img-zoom">
-        <Image src={image} alt={title} fill className="object-cover" sizes="320px" />
+        <Image src={image} alt="" fill className="object-cover" sizes="320px" />
       </span>
       <span className="flex flex-col gap-0.5 px-4 py-3">
         <span className="font-medium text-sm">{title}</span>
@@ -112,7 +112,7 @@ function StudioPopup({ name, desc, color }: { name: string; desc: string; color:
 }
 
 /* ── Symbol + text card (X, Illustrator, socials) ── */
-export function SymbolCardPopup({ symbol, bg, fg, title, desc }: { symbol: string; bg: string; fg?: string; title: string; desc: string }) {
+export function SymbolCardPopup({ symbol, bg, fg, title, desc }: { symbol: string; bg: string; fg?: string; title: React.ReactNode; desc: React.ReactNode }) {
   return (
     <span className="flex items-center gap-3 w-[280px] px-4 py-3">
       <span
@@ -205,6 +205,26 @@ export default function Bio() {
               <span className={`${link_class} cursor-default`}>{chunks}</span>
             </HoverPopup>
           ),
+          figma: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-figma.svg" icon_bg="#1E1E1E" title={t("popups.figma.title")} desc={t("popups.figma.desc")} />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          illustrator: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-illustrator.svg" icon_bg="#300" title={t("popups.illustrator.title")} desc={t("popups.illustrator.desc")} full />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          photoshop: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-photoshop.svg" icon_bg="#001E36" title={t("popups.photoshop.title")} desc={t("popups.photoshop.desc")} full />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
+          aftereffects: (chunks) => (
+            <HoverPopup content={<IconCardPopup icon="/popups/tech-aftereffects.svg" icon_bg="#1f0040" title={t("popups.aftereffects.title")} desc={t("popups.aftereffects.desc")} full />}>
+              <span className={`${link_class} cursor-default`}>{chunks}</span>
+            </HoverPopup>
+          ),
         })}
       </p>
 
@@ -249,7 +269,7 @@ export default function Bio() {
       <p>
         {t.rich("p7", {
           link: (chunks) => (
-            <a href="mailto:hola@nicolascorbal.com" className={link_class}>{chunks}</a>
+            <a href="mailto:nicocorbal@gmail.com" className={link_class}>{chunks}</a>
           ),
         })}
       </p>

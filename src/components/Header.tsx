@@ -29,7 +29,9 @@ export default function Header() {
   return (
     <header className="flex justify-between items-start mb-16">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">{t("name")}</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">
+          {t("name")}
+        </h1>
         <p className="text-[var(--text-muted)] text-sm mt-1">
           {t("subtitle")}{time ? ` · ${time}` : ""}
         </p>

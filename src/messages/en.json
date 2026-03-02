@@ -11,7 +11,7 @@
     "p1": "Design Engineer at <osix>OSIX</osix>, a dev company I co-founded with six classmates from <usc>USC</usc> where I do frontend and product design. I started Computer Engineering in 2022 and three years later we built the company. Since then I haven't stopped — between classes, client projects and personal stuff there's always something going on.",
     "p2": "I build products where design and code meet. My role is <role>frontend and product design</role> — websites, apps, technical consulting, whatever the client needs. Nine months full-time and growing. I like being involved in the whole process, from the first idea to production.",
     "p3": "I spend most of my day between X and Illustrator. I like when a project feels right from the first click — typography, spacing, transitions, the kind of things you don't notice until they're missing. I believe good products are built by caring about the small details.",
-    "stack": "My stack is <react>React</react>, <next>Next.js</next>, <ts>TypeScript</ts> and <tailwind>Tailwind</tailwind>. I like tools that stay out of the way — that let you think about the product, not the configuration.",
+    "stack": "My stack is <react>React</react>, <next>Next.js</next>, <ts>TypeScript</ts> and <tailwind>Tailwind</tailwind>. For design I use <figma>Figma</figma>, <illustrator>Illustrator</illustrator>, <photoshop>Photoshop</photoshop> and <aftereffects>After Effects</aftereffects>. I like tools that stay out of the way — that let you think about the product, not the configuration.",
     "p4": "I follow studios like <lusion>Lusion</lusion> and <linear>Linear</linear> closely. Detail-oriented, fast learner, team player. The difference between good and obvious is usually the last 10 percent, and that's the part that motivates me most.",
     "p5": "Outside of work I draw inspiration from a lot of things — <music>electronic music</music>, <films>cinema</films> and <books>reading</books>. I consume quite a bit of everything and like to mix references. I think what you see and listen to outside of work ends up showing in what you design, even if you don't realize it.",
     "p7": "Always open to new projects and conversations — <link>get in touch</link>.",
@@ -64,18 +64,50 @@
       "tailwind": {
         "title": "Tailwind CSS",
         "desc": "Utility-first CSS framework"
+      },
+      "figma": {
+        "title": "Figma",
+        "desc": "Collaborative interface design tool"
+      },
+      "photoshop": {
+        "title": "Adobe Photoshop",
+        "desc": "Image editing and compositing"
+      },
+      "aftereffects": {
+        "title": "After Effects",
+        "desc": "Motion graphics and visual effects"
       }
+    }
+  },
+  "now": {
+    "title": "Now",
+    "labels": {
+      "working": "Working at",
+      "listening": "Listening to",
+      "reading": "Reading",
+      "location": "Based in"
+    },
+    "items": {
+      "working": "OSIX",
+      "listening": "H\u00e9ctor Oaks \u00b7 Klangkuenstler",
+      "reading": "1Q84 \u2014 Murakami",
+      "location": "Santiago de Compostela"
+    },
+    "popups": {
+      "osix": "Design & product frontend",
+      "music": "H\u00e9ctor Oaks \u00b7 Klangkuenstler",
+      "book": "Haruki Murakami \u2014 1Q84"
     }
   },
   "projects": {
     "title": "Projects"
   },
   "footer": {
-    "reach": "Reach me at <email>hola@nicolascorbal.com</email> · <twitter>Twitter</twitter> · <github>GitHub</github> · <linkedin>LinkedIn</linkedin>",
+    "reach": "Reach me at <email>nicocorbal@gmail.com</email> · <github>GitHub</github> · <linkedin>LinkedIn</linkedin>",
     "copyright": "© {year} Nicolás Corbal",
     "popups": {
       "email": {
-        "title": "hola@nicolascorbal.com",
+        "title": "nicocorbal@gmail.com",
         "desc": "I reply within 24h"
       },
       "twitter": {
@@ -83,7 +115,7 @@
         "desc": "Design, frontend and what inspires me"
       },
       "github": {
-        "title": "nicolascorbal",
+        "title": "NicoCorbal",
         "desc": "Open source projects and experiments"
       },
       "linkedin": {

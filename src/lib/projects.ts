@@ -52,6 +52,7 @@ export interface Project {
   tech: string[];
   icon: string;
   heroImage?: string;
+  screenshot?: string;
   color: string;
   link?: string;
   github?: string;
@@ -85,4 +86,8 @@ export function getAdjacentProjects(currentId: string, locale: string = "es"): {
 
 export function getAllProjects(locale: string = "es"): Project[] {
   return getProjects(locale);
+}
+
+export function get_project_index(id: string, locale: string = "es"): number {
+  return getProjects(locale).findIndex((p) => p.id === id);
 }
